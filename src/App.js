@@ -47,6 +47,7 @@ class App extends Component {
 
     return (
       <div className="App">
+        A very, very simple kanban board
         <Layout header={header} board={board}/>
       </div>
     );
