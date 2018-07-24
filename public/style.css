@@ -1,0 +1,9 @@
+.Row {
+    display: inline-block;
+    margin-right: 6px;
+    background-color: #EEE;
+    height: 50%;
+}
+.Header {
+    background-color: rgb(39, 29, 29);
+}
