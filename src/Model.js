@@ -6,31 +6,47 @@ class Model{
 
         this.id = 1;
         this.data = {
-            backlog : [ 
+            backlog : {
+                items : [ 
                 {id : this.getId(),text : 'BL1'},
                 {id : this.getId(),text : 'BL2'},
                 {id : this.getId(),text : 'BL3'}
-            ],
-            ready : [
+                ],
+                name : "Backlog"
+            },
+            ready : { 
+                items : [
                 {id : this.getId(),text : 'R1'},
                 {id : this.getId(),text : 'R2'},
                 {id : this.getId(),text : 'R3'}
-            ],
-            coding: [
+                ],
+                name : "Ready"
+            },
+            coding: { 
+                items : [
                 {id : this.getId(),text : 'CO1'},
                 {id : this.getId(),text : 'CO2'},
                 {id : this.getId(),text : 'CO3'}
-            ],
-            test: [
+                ],
+                name : "Coding"
+            },
+            test: 
+                {
+                items : [
                 {id : this.getId(),text : 'T1'},
                 {id : this.getId(),text : 'T2'},
-                {id : this.getId(),text : 'T3'}
-            ],
-            done: [
+                {id : this.getId(),text : 'T3'}            
+                ],
+                name : "Test"
+            },
+            done: {
+                items : [
                 {id : this.getId(),text : 'D1'},
                 {id : this.getId(),text : 'D2'},
                 {id : this.getId(),text : 'D3'}
-            ]
+                ],
+                name : "Done"
+            }
         };
     }
 
@@ -38,18 +54,18 @@ class Model{
         return this.id++;
     }
 
-    setItemNextStep(item){
+    setItemNextStep(itemId){
         var elementFound = null;
         var data = this.data;
         var stop = false;
-        console.log(data);
+        console.log(`Item ${itemId} clicked`);
 
         for (var section in data){
             console.log(section);
             if (!stop){
                 if(elementFound === null){
-                    data[section] = data[section].map(element => {
-                        if(item.id === element.id){
+                    data[section].items = data[section].items.map(element => {
+                        if(itemId === element.id){
                             elementFound = element;
                             return null;
                         }else{
@@ -61,12 +77,14 @@ class Model{
                         }
                     });
                 }else{
-                    data[section].push(elementFound);
+                    data[section].items.push(elementFound);
                     elementFound = null;
                     stop = true;
                 }
             }
         }
+
+        console.log(data);
     }
 
     getData(){

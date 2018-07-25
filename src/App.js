@@ -23,7 +23,7 @@ class App extends Component {
   onNewItem(text){
     console.log(this.state);
     this.setState(function(oldState,oldProp){
-      oldState.data.backlog.push({
+      oldState.data.backlog.items.push({
         id : this.model.getId(),
         text : text
       });

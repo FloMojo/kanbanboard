@@ -2,15 +2,10 @@ import React from 'react';
 
 export default function Row(props){
     return(
-        <div className='Row'>
-            <div className='RowName'> 
-            {props.title}
-            </div>
-            <ul>
+                <div className='BoardRow'>
                 {props.items.map(function(item){       
-                    return <li key={item.id} onClick={() => props.onItemClicked(item)}>{item.text}</li> 
+                    return <div key={item.id} onClick={() => props.onItemClicked(item)} className='BoardCell'>{item.text}</div>;
                 })}
-            </ul>
-        </div>
+                </div>
     );
 }
