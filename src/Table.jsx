@@ -25,7 +25,8 @@ export default function Table(props){
             if(item.length > index){
                 console.log(item[index]);
                 var id = item[index].id;
-                row.push(<div className="divTableCell" key={item[index].id} onClick={() => props.onItemClicked(id)}><Card text={item[index].text}/></div>);
+                //row.push(<div className="divTableCell" key={item[index].id} onClick={() => props.onItemClicked(id)}><Card item={item[index]}/></div>);
+                row.push(<div className="divTableCell" ><Card item={item[index]} onItemClicked={props.onItemClicked}/></div>);
             }else{
                 row.push(<div className="divTableCell"></div>);
             }

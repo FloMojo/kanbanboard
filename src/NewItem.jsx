@@ -31,6 +31,7 @@ export default class NewItem extends React.Component{
     render(){
         return (
         <div className='NewItem'> 
+            <label>Beschreibung der Task</label>
             <input onChange={this.onChange} />
             <button onClick={this.onClick} >Hinzufügen</button>
         </div>

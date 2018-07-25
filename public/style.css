@@ -80,53 +80,20 @@ div.blueTable {
     text-align: center;
     background-color: gold                   
 }
-.BoardHead {
-    display: table-header-group;
-    background-color: #ddd;
+.NewItem{
+    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    background-color: #1C6EA4;
+    padding: 2px 8px; 
+    width : 50%;
+    align-content: center;
+    align-self: center;
+    align-items: center;
 }
-.RowBorder{
-    display: inline-block;
-    height: 46px;
-	padding: 14px 14px 0 14px;
+.NewItem input{
+    background-color: gold                   ;
 }
-.Row2 {
-    
-    margin-right: 6px;
-    background-color: #EEE;
-    height: 50%;
-    display: table-row;display: inline-block;
-}
-.Board2{
-    display: table; 
-    border-collapse: separate; 
-    border-spacing: 30px 0;   
-}
-.Header {
-	margin: 0 0 20px 0;
-	height: 46px;
-	padding: 14px 14px 0 14px;
-	color: white;
-	background-color: #A60000;
-	text-align: center;
-	font-size: 18px;
-	font-weight: 400;
-	font-style: normal;
-	text-transform: uppercase;
-	letter-spacing: 4px;
-}
-.Row {
-    margin-right: 6px;
-    background-color: #EEE;
-    height: 50%;
-    display: inline-block;
-}
-.Board3 {
-    display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-flex-wrap: wrap; -ms-flex-wrap: wrap; flex-wrap: wrap; overflow: hidden;
-}
-.Row3 { 
-    width: calc(100% / 2 - 5px); 
-    float: left;
-    display: -webkit-flex;
-    display: -ms-flexbox; 
-    display: flex;
+.NewItem label{
+    color: #FFFFFF;
 }

@@ -42,13 +42,12 @@ class App extends Component {
   }
 
   render() {
-    const header = <NewItem onNewItem={this.onNewItem} />;
+    const newItem = <NewItem onNewItem={this.onNewItem} />;
     const board  = <Board data={this.state.data} onItemClicked={this.onItemClicked}/>;
 
     return (
       <div className="App">
-        A very, very simple kanban board
-        <Layout header={header} board={board}/>
+        <Layout newItem={newItem} board={board}/>
       </div>
     );
   }
