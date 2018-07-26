@@ -7,11 +7,12 @@ export default class Board extends React.Component{
         super(props);
 
         this.state = props;
+        console.log("Board constructor",props);
     }
 
 
     render(){
-        const {data} = this.state;
+        const {data} = this.props;
         const {onItemClicked} = this.props;
 
         return (

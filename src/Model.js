@@ -1,9 +1,10 @@
+import React from 'react';
 
-
-class Model{
-    constructor(){
+export default  class Model extends React.Component{
+    constructor(props){
+        super(props);
         this.setItemNextStep = this.setItemNextStep.bind(this);
-
+        /*
         this.id = 1;
         this.data = {
             backlog : {
@@ -47,11 +48,22 @@ class Model{
                 ],
                 name : "Done"
             }
-        };
+        };*/
+        this.state = { data:{}};
     }
+    componentDidMount(){
+        console.log('Model::componentDidMount');
+        fetch('http://localhost:8081/getCards')
+        .then(data => { return data.json();})
+        .then(cards =>{ this.setState({ data : cards },()=>{console.log(this.state);}) });
 
+        console.log('Model::componentDidMount');
+    }
     getId(){
         return this.id++;
+    }
+    render(){
+        return <div></div>;
     }
 
     setItemNextStep(itemId){
@@ -88,8 +100,9 @@ class Model{
     }
 
     getData(){
-        return this.data;
+        console.log(this.state.data);
+        return this.state.data;
     }
 }
 
-export default Model;
+//export default Model;

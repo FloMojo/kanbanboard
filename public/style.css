@@ -85,8 +85,9 @@ div.blueTable {
     -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
     -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
     background-color: #1C6EA4;
-    padding: 2px 8px; 
+    padding: 20px 0px 20px 0px; 
     width : 50%;
+    margin: auto;
     align-content: center;
     align-self: center;
     align-items: center;
