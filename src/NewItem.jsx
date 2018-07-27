@@ -18,14 +18,12 @@ export default class NewItem extends React.Component{
 
     onClick(evt){
         console.log(`Button clicked, value ${this.state.inputValue}`);
+        let card = { text : this.state.inputValue };
 
-        const {onNewItem} = this.props;
-
-        if (typeof onNewItem === 'function'){
-            onNewItem(this.state.inputValue);
-        }else{
-            console.log(`onNewItem is no function`);
-        }
+       fetch( 'http://localhost:8081/addCard', { method : 'post', headers: { 'Accept': 'application/json','Content-Type': 'application/json'}, body : JSON.stringify(card) })
+       .then(response => response.json())
+       .then(card => console.log(`Card ${card} added`))
+       .catch(err => console.log(err));
     }
 
     render(){

@@ -3,10 +3,12 @@ import Card from './Card';
 
 export default function Table(props){
     const listOfItems = [];
-    var index = 0;
-    var max = 0;
-    var table = [];
-    var header = [];
+
+    var 
+    index   = 0,
+    max     = 0,
+    table   = [],
+    header  = [];
     
     for (var item in props.items){
         if(Array.isArray(props.items[item].items)){
@@ -36,7 +38,7 @@ export default function Table(props){
         index++;
     }
 
-    console.log(table);
+    //console.log(table);
 
         
     var tableRender = <div className='divTable blueTable'>
