@@ -2,21 +2,26 @@ import React from 'react';
 import Card from './Card';
 
 export default function Table(props){
+    console.log("Table props",props);
+
     const listOfItems = [];
 
     var 
     index   = 0,
     max     = 0,
     table   = [],
-    header  = [];
+    header  = [],
+    cards   = props.items;
     
-    for (var item in props.items){
-        if(Array.isArray(props.items[item].items)){
-            listOfItems.push(props.items[item].items);
-            header.push(<div className="divTableHead">{props.items[item].name}</div>);
-            max = props.items[item].items.length > max ? props.items[item].items.length : max;
+    console.log({cards});
+
+    for (var item in cards){
+        if(Array.isArray(cards[item].items)){
+            listOfItems.push(cards[item].items);
+            header.push(<div className="divTableHead">{cards[item].name}</div>);
+            max = cards[item].items.length > max ? cards[item].items.length : max;
         }else{
-            console.log("No array:", props.items[item].items);
+            console.log("No array:", cards[item].items);
         }
     }
     
